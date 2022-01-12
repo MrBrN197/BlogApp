@@ -19,7 +19,8 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET #show' do
-    before(:each) { get user_path id: 32 }
+    before(:each) { get user_path(32) }
+
     it 'should return 200 response' do
       expect(response).to have_http_status(200)
     end

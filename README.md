@@ -1,24 +1,57 @@
-# README
+# Leaderboard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Leaderboard is a website that displays scores submitted by different players. It also allows you to submit your score
 
-Things you may want to cover:
+---
 
-* Ruby version
+Live Demo [https://mrbrn197.github.io/Leaderboard](https://mrbrn197.github.io/Leaderboard/dist)
 
-* System dependencies
+![screenshot](./preview.png)
+![screenshot](./demo.gif)
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby
+- Ruby on Rails
+- RSpec
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple example steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+git clone https://github.com/MrBrN197/Leaderboard.git
+```
 
-* Deployment instructions
+and then run
 
-* ...
+```
+npm i
+npm start
+```
+
+to start the server run `rails s`
+
+## Testing
+to test simply run `rspec`
+
+
+## Authors
+
+👤 **Brian Orora**
+
+- GitHub: [@MrBrN197](https://github.com/MrBrN197)
+- Twitter: [@MrBrN197](https://twitter.com/MrBrN197)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/brian-orora-2b7883a7/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
