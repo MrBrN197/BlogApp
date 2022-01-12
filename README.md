@@ -1,13 +1,7 @@
-# Leaderboard
+# Blog
 
-> Leaderboard is a website that displays scores submitted by different players. It also allows you to submit your score
-
+> A blog website that shows a list of posts and empower readers to interact with them by adding comments and liking posts.
 ---
-
-Live Demo [https://mrbrn197.github.io/Leaderboard](https://mrbrn197.github.io/Leaderboard/dist)
-
-![screenshot](./preview.png)
-![screenshot](./demo.gif)
 
 ## Built With
 
@@ -20,14 +14,13 @@ Live Demo [https://mrbrn197.github.io/Leaderboard](https://mrbrn197.github.io/Le
 To get a local copy up and running follow these simple example steps.
 
 ```
-git clone https://github.com/MrBrN197/Leaderboard.git
+git clone https://github.com/MrBrN197/BlogApp.git
 ```
 
 and then run
 
 ```
-npm i
-npm start
+bundle install
 ```
 
 to start the server run `rails s`
