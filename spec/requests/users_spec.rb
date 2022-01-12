@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  describe 'GET /users' do
+  describe 'GET #index' do
     it 'should return 200 response' do
       get users_path
       expect(response).to have_http_status(200)
@@ -18,8 +18,8 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'GET /user' do
-    before(:each) { get user_url id: 32}
+  describe 'GET #show' do
+    before(:each) { get user_path id: 32 }
     it 'should return 200 response' do
       expect(response).to have_http_status(200)
     end
