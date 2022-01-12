@@ -17,4 +17,20 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('Users')
     end
   end
+
+  describe 'GET /user' do
+    before(:each) { get user_url id: 32}
+    it 'should return 200 response' do
+      expect(response).to have_http_status(200)
+    end
+
+    it 'should render the show template ' do
+      expect(response).to render_template(:show)
+    end
+
+    it 'should include the word Single User' do
+      expect(response.body).to include('Single User')
+    end
+  end
+
 end
