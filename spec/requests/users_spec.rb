@@ -32,5 +32,4 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('Single User')
     end
   end
-
 end

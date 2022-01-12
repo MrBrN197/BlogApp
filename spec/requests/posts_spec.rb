@@ -26,5 +26,4 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include('Single Post')
     end
   end
-
 end
