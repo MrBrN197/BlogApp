@@ -1,24 +1,50 @@
-# README
+# Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> A blog website that shows a list of posts and empower readers to interact with them by adding comments and liking posts.
+---
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Ruby on Rails
+- RSpec
 
-* System dependencies
+## Getting Started
 
-* Configuration
+To get a local copy up and running follow these simple example steps.
 
-* Database creation
+```
+git clone https://github.com/MrBrN197/BlogApp.git
+```
 
-* Database initialization
+and then run
 
-* How to run the test suite
+```
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+to start the server run `rails s`
 
-* Deployment instructions
+## Testing
+to test simply run `rspec`
 
-* ...
+
+## Authors
+
+👤 **Brian Orora**
+
+- GitHub: [@MrBrN197](https://github.com/MrBrN197)
+- Twitter: [@MrBrN197](https://twitter.com/MrBrN197)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/brian-orora-2b7883a7/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
