@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 2022_01_13_090510) do
     t.integer "posts_counter"
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users", column: "author_id"
+  add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users", column: "author_id"
   add_foreign_key "posts", "users", column: "author_id"
 end
