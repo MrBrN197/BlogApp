@@ -9,8 +9,6 @@ RSpec.describe Comment, type: :model do
     comment_creator = User.new(name: 'Mike', photo: '', bio: '', posts_counter: 0)
     post.comments.create!(text: 'nice one', author: comment_creator)
     post.comments.create!(text: 'really nice post', author: comment_creator)
-
-    Comment.update_comments_counter_for(post)
     expect(post.comments.length).to eql(2)
   end
 end

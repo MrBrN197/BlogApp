@@ -15,11 +15,10 @@ RSpec.describe Post, type: :model do
   it 'updates the post_counter correctly' do
     user = User.new(name: 'Michael', photo: '', bio: '', posts_counter: 0)
     expect(user).to be_valid
-    Post.create(title: 'Post 1ere', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
-    Post.create(title: 'Second Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
-    Post.create(title: 'Third Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
-    Post.create(title: 'Fourth Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
-    Post.update_post_count_for(user)
+    Post.create!(title: 'Post 1ere', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
+    Post.create!(title: 'Second Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
+    Post.create!(title: 'Third Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
+    Post.create!(title: 'Fourth Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
     expect(user.posts_counter).to eql(4)
   end
 

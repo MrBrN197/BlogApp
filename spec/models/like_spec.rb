@@ -13,7 +13,7 @@ RSpec.describe Like, type: :model do
     user2 = User.create!(name: 'Henry')
     post = user2.posts.create!(title: 'Post1', text: 'This is a post')
     post.likes.create!(author: user)
-    Like.update_likes_for(post)
+    # Like.update_likes_for(post)
     expect(post.likes_counter).to eql(1)
   end
 end
