@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :comments
 
   def self.update_post_count_for(user)
-    posts = Post.where(author: user)
+    posts = where(author: user)
     user.posts_counter = posts.length
   end
 
