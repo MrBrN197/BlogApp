@@ -1,3 +1,46 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.user {
+  background-color: gray;
+  display: flex;
+  align-items: stretch;
+  padding: 2rem;
+  gap: 2rem;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid black;
+  }
+
+  .details {
+    background-color: crimson;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    .sub {
+      align-self: flex-end;
+    }
+  }
+}
+
+.bio {
+  background: red;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.post {
+  background-color: rgb(216, 216, 216);
+}

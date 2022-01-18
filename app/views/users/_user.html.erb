@@ -1,7 +1,9 @@
-<div class="box">
-  <div class="photo"><%= user.photo %></div>
+<div class="user">
+  <div class="photo">
+    <img src="<%= user.photo %>">
+  </div>
   <div class="details">
     <h2><%= user.name %></h2>
-    <span>Number of posts <%= user.posts_counter %></span>
+    <span class="sub">Number of posts <%= user.posts_counter %></span>
   </div>
 </div>

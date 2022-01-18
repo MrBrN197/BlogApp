@@ -4,7 +4,10 @@
   </div>
 
   <div class="posts">
-    <%= render @posts %>
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <%= render post.comments %>
+    <% end %>
   </div>
   <button>See All Posts</button>
 </section>
