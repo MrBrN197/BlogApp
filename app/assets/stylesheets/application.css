@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.4em 1em;
+  align-self: center;
+  cursor: pointer;
+  border: 2px solid black;
+}

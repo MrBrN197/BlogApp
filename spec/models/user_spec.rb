@@ -12,11 +12,12 @@ RSpec.describe User, type: :model do
     user = User.create!(name: 'Sarah', photo: '', bio: '', posts_counter: 0)
     user.posts.create(title: 'Post 1', text: 'This is my first post')
     user.posts.create(title: 'Post 2', text: 'This is my second post')
-    user.posts.create(title: 'Post 3', text: 'This is my third post')
-    user.posts.create(title: 'Post 4', text: 'This is my fourth post')
-    user.posts.create(title: 'Post 5', text: 'This is my fifth post')
+    p3 = user.posts.create(title: 'Post 3', text: 'This is my third post')
+    p4 = user.posts.create(title: 'Post 4', text: 'This is my fourth post')
+    p5 = user.posts.create(title: 'Post 5', text: 'This is my fifth post')
     expect(user.posts.length).to eql(5)
     first_three_posts = user.first_three
     expect(first_three_posts.length).to eql(3)
+    expect(first_three_posts).to match_array([p5, p4, p3])
   end
 end

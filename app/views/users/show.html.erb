@@ -1,1 +1,10 @@
-<h1>Single User</h1>
+<section>
+  <%= render @user %>
+  <div class="bio">
+    <p>Bio</p>
+    <p><%= @user.bio %></p>
+  </div>
+  <div class="posts">
+    <%= render @user.posts %>
+  </div>
+</section>

@@ -23,7 +23,12 @@ and then run
 bundle install
 ```
 
-to start the server run `rails s`
+## Development 
+
+start of by creating the database and running migrations using
+`bin/rails db:setup`
+
+to start the server run `bin/rails s`
 
 ## Testing
 to test simply run `rspec`
