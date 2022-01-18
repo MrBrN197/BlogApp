@@ -25,10 +25,9 @@ a {
 }
 
 button {
-  border: none;
   font-size: 1rem;
   padding: 0.4em 1em;
   align-self: center;
   cursor: pointer;
-  border: 2px solid black
+  border: 2px solid black;
 }
