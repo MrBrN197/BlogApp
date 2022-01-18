@@ -4,8 +4,7 @@
   </div>
 
   <div class="posts">
-    <% @user.posts.each do |post| %>
-      <%= render post %>
-    <% end %>
+    <%= render @posts %>
   </div>
+  <button>See All Posts</button>
 </section>

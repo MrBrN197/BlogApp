@@ -1,6 +1,7 @@
 <section>
   <div class="user">
     <%= render @user %>
+    <p><%= @user.bio %></p>
   </div>
   <div class="posts">
     <% @user.posts.each do |post|  %>
