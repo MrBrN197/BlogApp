@@ -1,13 +1,7 @@
 <section>
-  <div class="user">
-    <%= render @user %>
-  </div>
-
+  <%= render @user %>
   <div class="posts">
-    <% @posts.each do |post| %>
-      <%= render post %>
-      <%= render post.comments %>
-    <% end %>
+    <%= render @posts %>
   </div>
   <button>See All Posts</button>
 </section>

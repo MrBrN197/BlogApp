@@ -14,8 +14,14 @@
  *= require_self
  */
 
-
-body {
+* {
   margin: 0;
   padding: 0;
+}
+
+button {
+  border: none;
+  font-size: 1rem;
+  padding: 0.4em 1em;
+  align-self: center;
 }

@@ -1,4 +1,10 @@
-<div class="post">
-  <h3><%= post.title %></h3>
-  <p> <%= post.text %> </p>
+<div class="post-box">
+  <div class="post">
+    <p><strong>Post #<%= post_counter + 1 %></strong></p>
+    <h3><%= post.title %></h3>
+    <p> <%= post.text %> </p>
+  </div>
+  <div class="comments">
+    <%= render post.comments %>
+  </div>
 </div>
