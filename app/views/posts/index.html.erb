@@ -1,1 +1,11 @@
-<h1>Posts</h1>
+<section>
+  <div class="user">
+    <%= render @user %>
+  </div>
+
+  <div class="posts">
+    <% @user.posts.each do |post| %>
+      <%= render post %>
+    <% end %>
+  </div>
+</section>
