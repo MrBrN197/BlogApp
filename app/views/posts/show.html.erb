@@ -12,6 +12,9 @@
     <%= render @post.comments %>
   </div>
 
+  <%= link_to add_like_user_post_path, method: :post, class: 'like' do %>
+    <i class="far fa-heart"></i>
+  <% end %>
 
   <%= form_with url: add_comment_user_post_path do |f| %>
     <%= f.label :text, 'Comment' %>
