@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2022_01_13_090510) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text "title"
-    t.string "text"
+    t.text "title", null: false
+    t.string "text", null: false
     t.integer "comments_counter"
     t.integer "likes_counter"
     t.bigint "author_id", null: false
