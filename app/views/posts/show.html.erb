@@ -1,4 +1,9 @@
 <section>
+  <div class="flash">
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :span, msg, class: name %>
+    <% end -%>
+  </div>
   <div class="post">
     <h2><%= @post.title %></h2>
     <p><%= @post.text %></p>
@@ -6,4 +11,14 @@
   <div class="comments">
     <%= render @post.comments %>
   </div>
+
+  <%= link_to add_like_user_post_path, method: :post, class: 'like' do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+
+  <%= form_with url: add_comment_user_post_path do |f| %>
+    <%= f.label :text, 'Comment' %>
+    <%= f.text_area :text %>
+    <%= f.submit %>
+  <% end %>
 </section>

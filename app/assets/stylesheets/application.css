@@ -24,10 +24,18 @@ a {
   color: inherit;
 }
 
-button {
+button,
+input[type='submit'] {
   font-size: 1rem;
   padding: 0.4em 1em;
-  align-self: center;
   cursor: pointer;
-  border: 2px solid black;
+  border: none;
+  background-color: hotpink;
+  color: white;
+  border-radius: 0.4em;
+}
+
+input,
+textarea {
+  font: inherit;
 }
