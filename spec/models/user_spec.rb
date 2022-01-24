@@ -1,6 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  subject { User.new(name: 'Alex', photo: '', bio: '') }
+  before { subject.save! }
+
+  describe 'Test validations are correct' do
+    it 'test the user is invalid without a name' do
+      expect(subject).to be_valid
+      subject.name = nil
+      expect(subject).to_not be_valid
+      subject.name = ''
+      expect(subject).to_not be_valid
+    end
+    it 'test the user is invalid without post_counter' do
+      expect(subject).to be_valid
+      subject.posts_counter = nil
+      expect(subject).to_not be_valid
+    end
+  end
+
   it 'test that the user is created properly' do
     name = 'Alfred'
     photo = 'https://images.unsplash.com/photo-1642024728966-7492bae9bb60?w=300'

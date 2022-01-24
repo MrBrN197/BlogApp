@@ -12,14 +12,14 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template(:index)
     end
 
-    it '' do
+    it 'test that the body includes correct data' do
       get users_path
-      expect(response.body).to include('Users')
+      expect(response.body).to include('Number of posts')
     end
   end
 
   describe 'GET #show' do
-    before(:each) { get user_path(32) }
+    before(:each) { get user_path(1) }
 
     it 'should return 200 response' do
       expect(response).to have_http_status(200)
@@ -30,7 +30,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should include the word Single User' do
-      expect(response.body).to include('Single User')
+      expect(response.body).to include('Number of posts')
     end
   end
 end
