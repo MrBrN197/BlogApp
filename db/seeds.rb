@@ -13,10 +13,10 @@ image2 = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300'
 image3 = 'https://images.unsplash.com/photo-1546456073-92b9f0a8d413?w=300'
 image4 = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300'
 
-wendy = User.create!(name: 'Wendy', photo: image2 , bio: lorem40, posts_counter: 0)
-john = User.create!(name: 'John', photo: image3, bio: lorem40, posts_counter: 0)
-chris = User.create!(name: 'Chris', photo: image4 , bio: lorem40, posts_counter: 0)
-michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0)
+wendy = User.create!(name: 'Wendy', photo: image2 , bio: lorem40, posts_counter: 0, email: 'wendy@gmail.com', password: 'wendywendy')
+john = User.create!(name: 'John', photo: image3, bio: lorem40, posts_counter: 0, email: 'john@gmail.com', password: 'johnjohn')
+chris = User.create!(name: 'Chris', photo: image4 , bio: lorem40, posts_counter: 0, email: 'chris@gmail.com', password: 'chrischris')
+michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0, email: 'michael@gmail.com', password: 'micahelmichael')
 
 post1 = michael.posts.create!(title: 'Cats and Dogs', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0)
 michael.posts.create!(title: 'Never ending fun', text: 'this is second post but I don\'t think I should create another post again', comments_counter: 0, likes_counter: 0)
