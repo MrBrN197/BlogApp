@@ -120,3 +120,14 @@ section {
     background-color: rgba(233, 53, 89, 0.486);
   }
 }
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button,
+  input[type=submit] {
+    width: 100%;
+  }
+}

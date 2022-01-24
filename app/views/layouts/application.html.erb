@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="flash">
+    <div class="flash centered">
       <% flash.each do |name, msg| -%>
         <%= content_tag :span, msg, class: name %>
       <% end -%>
