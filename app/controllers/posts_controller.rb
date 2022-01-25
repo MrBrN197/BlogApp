@@ -28,4 +28,9 @@ class PostsController < ApplicationController
       render :new, locals: { post: post }
     end
   end
+  
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+  end
 end
