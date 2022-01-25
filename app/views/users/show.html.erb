@@ -4,8 +4,8 @@
     <p>Bio</p>
     <p><%= @user.bio %></p>
   </div>
+  <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
   <div class="posts">
     <%= render @user.posts %>
-    <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
   </div>
 </section>

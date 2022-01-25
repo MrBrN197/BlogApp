@@ -15,8 +15,28 @@ section {
   gap: 1rem;
 }
 
+.button,
+button,
+input[type='submit'] {
+  width: fit-content;
+  font-size: 1rem;
+  padding: 0.4em 1em;
+  cursor: pointer;
+  border: none;
+  background-color: hotpink;
+  color: white;
+  border-radius: 0.4em;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgb(218, 71, 144);
+  }
+}
+
 .user {
-  background-color: gray;
+  @extend %box;
+
+  background: whitesmoke;
   display: flex;
   align-items: stretch;
   gap: 2rem;
@@ -47,10 +67,13 @@ section {
 }
 
 .bio {
+  @extend %box;
+
   background: $darker;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  padding: 1rem;
 }
 
 %box {
@@ -90,7 +113,10 @@ section {
 }
 
 .comment {
-  line-height: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.4rem;
 }
 
 .comment-box {
