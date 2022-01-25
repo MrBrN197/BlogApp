@@ -53,6 +53,14 @@ section {
   margin-top: 1rem;
 }
 
+%box {
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.1),
+    0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
 .post-box {
   display: flex;
   flex-direction: column;
@@ -68,15 +76,21 @@ section {
 }
 
 .post {
+  @extend %box;
+
   background-color: $darker;
   padding: 1rem;
-  border: 1px solid black;
 }
 
 .comments {
+  @extend %box;
+
   background-color: $darker;
   padding: 1rem;
-  border: 1px solid black;
+}
+
+.comment {
+  line-height: 2;
 }
 
 .comment-box {

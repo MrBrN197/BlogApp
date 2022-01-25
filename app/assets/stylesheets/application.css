@@ -24,6 +24,7 @@ a {
   color: inherit;
 }
 
+.button,
 button,
 input[type='submit'] {
   font-size: 1rem;
@@ -33,6 +34,7 @@ input[type='submit'] {
   background-color: hotpink;
   color: white;
   border-radius: 0.4em;
+  box-sizing: border-box;
 }
 
 input,
