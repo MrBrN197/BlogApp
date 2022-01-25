@@ -13,7 +13,9 @@ image2 = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300'
 image3 = 'https://images.unsplash.com/photo-1546456073-92b9f0a8d413?w=300'
 image4 = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300'
 
-wendy = User.create!(name: 'Wendy', photo: image2 , bio: lorem40, posts_counter: 0, email: 'wendy@gmail.com', password: 'wendywendy')
+wendy = User.new(name: 'Wendy', photo: image2 , bio: lorem40, posts_counter: 0, email: 'wendy@gmail.com', password: 'wendywendy')
+wendy.skip_confirmation!
+wendy.save!
 john = User.create!(name: 'John', photo: image3, bio: lorem40, posts_counter: 0, email: 'john@gmail.com', password: 'johnjohn')
 chris = User.create!(name: 'Chris', photo: image4 , bio: lorem40, posts_counter: 0, email: 'chris@gmail.com', password: 'chrischris')
 michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0, email: 'michael@gmail.com', password: 'micahelmichael')
@@ -31,3 +33,5 @@ john.comments.create!(text: 'Love 💕 it Aswell !!!', post: post4)
 wendy.comments.create!(text: 'This is a terific post ', post: post4)
 
 chris.comments.create!(text: 'We still need one more post😢', post: post3)
+
+wendy.posts.create(title:'Sky is Blue', text: 'I saw a butterfly vanish into thin air like houdini' )
