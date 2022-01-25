@@ -28,9 +28,10 @@ class PostsController < ApplicationController
       render :new, locals: { post: post }
     end
   end
-  
+
   def destroy
     post = Post.find(params[:id])
-    post.destroy
+    post.destroy!
+    redirect_to user_posts_url
   end
 end

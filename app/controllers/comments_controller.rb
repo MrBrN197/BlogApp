@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    post = Post.find(params[:id])
+    post = Post.find(params[:post_id])
     comment = current_user.comments.new(**comment_params, post: post)
     if comment.save
       flash[:success] = 'Created A new comment'
     else
       flash[:fail] = 'Failed To Create a Comment'
     end
-    redirect_to user_post_url
+    redirect_back fallback_location: users_url
   end
 
   private

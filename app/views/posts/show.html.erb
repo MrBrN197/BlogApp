@@ -11,9 +11,9 @@
     <i class="far fa-heart"></i>
   <% end %>
 
-  <%= form_with url: add_comment_user_post_path do |f| %>
+  <%= form_with url: user_post_comments_url(@post.author, @post) do |f| %>
     <%= f.label :text, 'Comment' %>
     <%= f.text_area :text %>
-    <%= f.submit %>
+    <%= f.submit 'Create Post' %>
   <% end %>
 </section>
