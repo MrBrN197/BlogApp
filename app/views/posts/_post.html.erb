@@ -10,6 +10,6 @@
     <%= render post.five_recent_comments %>
   </div>
   <% if can? :destroy, post %>
-    <%= button_to 'Delete', user_post_path(@user, post), method: :delete %>
+    <%= button_to 'Delete', user_post_path(@user, post), method: :delete, class: 'delete' %>
   <% end %>
 </div>

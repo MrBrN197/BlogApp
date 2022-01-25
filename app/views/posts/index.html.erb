@@ -3,5 +3,8 @@
   <div class="posts">
     <%= render @posts %>
   </div>
-  <%= link_to 'See All Posts', @user, class: 'button' %>
+  <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
+  <% if !@user.posts.empty? %>
+    <%= link_to 'See All Posts', @user, class: 'button' %>
+  <% end %>
 </section>
