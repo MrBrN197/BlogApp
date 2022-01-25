@@ -10,6 +10,14 @@ class CommentsController < ApplicationController
     redirect_back fallback_location: users_url
   end
 
+  def destroy
+    puts 'Removing Comment'
+    comment = Comment.find(params[:id])
+    post = comment.post
+    comment.destroy!
+    redirect_back fallback_location: [post.author, post]
+  end
+
   private
 
   def comment_params
