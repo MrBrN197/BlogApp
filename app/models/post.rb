@@ -4,10 +4,15 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   belongs_to :author, class_name: 'User'
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   after_save :update_post_count
+  after_destroy :decrement_likes
+
+  def decrement_likes
+    author.decrement!(:posts_counter)
+  end
 
   def update_post_count
     author.increment!(:posts_counter)

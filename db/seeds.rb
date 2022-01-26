@@ -13,10 +13,18 @@ image2 = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300'
 image3 = 'https://images.unsplash.com/photo-1546456073-92b9f0a8d413?w=300'
 image4 = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300'
 
-wendy = User.create!(name: 'Wendy', photo: image2 , bio: lorem40, posts_counter: 0, email: 'wendy@gmail.com', password: 'wendywendy')
+wendy = User.new(name: 'Wendy', photo: image2 , bio: lorem40, posts_counter: 0, email: 'wendy@gmail.com', password: 'wendywendy')
+wendy.skip_confirmation!
+wendy.save!
 john = User.create!(name: 'John', photo: image3, bio: lorem40, posts_counter: 0, email: 'john@gmail.com', password: 'johnjohn')
+john.skip_confirmation!
+john.save!
 chris = User.create!(name: 'Chris', photo: image4 , bio: lorem40, posts_counter: 0, email: 'chris@gmail.com', password: 'chrischris')
-michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0, email: 'michael@gmail.com', password: 'micahelmichael')
+chris.skip_confirmation!
+chris.save!
+michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0, email: 'michael@gmail.com', password: 'michaelmichael')
+michael.skip_confirmation!
+michael.save!
 
 post1 = michael.posts.create!(title: 'Cats and Dogs', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0)
 michael.posts.create!(title: 'Never ending fun', text: 'this is second post but I don\'t think I should create another post again', comments_counter: 0, likes_counter: 0)
@@ -31,3 +39,13 @@ john.comments.create!(text: 'Love 💕 it Aswell !!!', post: post4)
 wendy.comments.create!(text: 'This is a terific post ', post: post4)
 
 chris.comments.create!(text: 'We still need one more post😢', post: post3)
+
+p5 = wendy.posts.create(title:'Sky is Blue', text: 'I saw a butterfly vanish into thin air like houdini' )
+p6 = chris.posts.create(title:'Meaningless Life...', text: 'How many times have you seen them throw that same tantrum' )
+p7 = john.posts.create(title:'I\'m sorry your majest', text: 'if you keep searching for for a new head you might lose your foot' )
+p8 = wendy.posts.create(title:'Black & Teal', text: 'take two fans attach them together end to end stick a lolipop at the top; what do you get... two lolipops stuck end to end with a lolipop on top' )
+
+michael.comments.create!(text: 'Nice stuff 💓', post: p6)
+michael.comments.create!(text: 'Really great article!', post: p7)
+michael.comments.create!(text: 'I still have some questions about this 🤔', post: p5)
+john.comments.create!(text: 'I\'m not sure how to feel about this', post: p5)

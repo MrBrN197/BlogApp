@@ -4,6 +4,9 @@
     <p>Bio</p>
     <p><%= @user.bio %></p>
   </div>
+  <% if @user.id == current_user.id %>
+    <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
+  <% end %>
   <div class="posts">
     <%= render @user.posts %>
   </div>

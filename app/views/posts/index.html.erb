@@ -1,7 +1,12 @@
 <section>
   <%= render @user %>
+  <% if @user.id == current_user.id %>
+    <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
+  <% end %>
   <div class="posts">
     <%= render @posts %>
   </div>
-  <button>See All Posts</button>
+  <% if !@user.posts.empty? %>
+    <%= link_to 'See All My Posts', @user, class: 'button' %>
+  <% end %>
 </section>

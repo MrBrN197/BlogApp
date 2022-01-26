@@ -2,18 +2,21 @@
   <div class="post">
     <h2><%= @post.title %></h2>
     <p><%= @post.text %></p>
+    <%= link_to add_like_user_post_path, method: :post, class: 'like' do %>
+      <span><i class="far fa-heart"></i> <%= @post.likes_counter  %></span>
+    <% end %>
   </div>
   <div class="comments">
     <%= render @post.comments %>
   </div>
-
-  <%= link_to add_like_user_post_path, method: :post, class: 'like' do %>
-    <i class="far fa-heart"></i>
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete, class: 'delete' %>
   <% end %>
 
-  <%= form_with url: add_comment_user_post_path do |f| %>
+
+  <%= form_with url: user_post_comments_url(@post.author, @post) do |f| %>
     <%= f.label :text, 'Comment' %>
     <%= f.text_area :text %>
-    <%= f.submit %>
+    <%= f.submit 'Create Comment' %>
   <% end %>
 </section>
