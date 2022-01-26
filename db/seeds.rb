@@ -22,7 +22,7 @@ john.save!
 chris = User.create!(name: 'Chris', photo: image4 , bio: lorem40, posts_counter: 0, email: 'chris@gmail.com', password: 'chrischris')
 chris.skip_confirmation!
 chris.save!
-michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0, email: 'michael@gmail.com', password: 'micahelmichael')
+michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0, email: 'michael@gmail.com', password: 'michaelmichael')
 michael.skip_confirmation!
 michael.save!
 
@@ -40,4 +40,12 @@ wendy.comments.create!(text: 'This is a terific post ', post: post4)
 
 chris.comments.create!(text: 'We still need one more post😢', post: post3)
 
-wendy.posts.create(title:'Sky is Blue', text: 'I saw a butterfly vanish into thin air like houdini' )
+p5 = wendy.posts.create(title:'Sky is Blue', text: 'I saw a butterfly vanish into thin air like houdini' )
+p6 = chris.posts.create(title:'Meaningless Life...', text: 'How many times have you seen them throw that same tantrum' )
+p7 = john.posts.create(title:'I\'m sorry your majest', text: 'if you keep searching for for a new head you might lose your foot' )
+p8 = wendy.posts.create(title:'Black & Teal', text: 'take two fans attach them together end to end stick a lolipop at the top; what do you get... two lolipops stuck end to end with a lolipop on top' )
+
+michael.comments.create!(text: 'Nice stuff 💓', post: p6)
+michael.comments.create!(text: 'Really great article!', post: p7)
+michael.comments.create!(text: 'I still have some questions about this 🤔', post: p5)
+john.comments.create!(text: 'I\'m not sure how to feel about this', post: p5)
