@@ -3,9 +3,13 @@ class LikesController < ApplicationController
 
   def create
     post = Post.find(params[:id])
-    like = current_user.likes.create(post: post)
-    like.save!
-    flash[:success] = 'Liked!'
+    deja_like = post.likes.find_by(author: current_user)
+    if deja_like
+      flash[:alert] = 'You\'ve already liked this post!'
+    else
+      current_user.likes.create!(post: post)
+      flash[:success] = 'Liked!'
+    end
     redirect_to user_post_url
   end
 end

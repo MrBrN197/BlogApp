@@ -4,6 +4,7 @@
       <p><strong>Post #<%= post_counter + 1 %></strong></p>
       <h3><%= post.title %></h3>
       <p> <%= post.text %> </p>
+      <span><i class="far fa-heart"></i> <%= post.likes.size  %></span>
     </div>
   <% end %>
   <div class="comments">

@@ -2,6 +2,7 @@
   <div class="post">
     <h2><%= @post.title %></h2>
     <p><%= @post.text %></p>
+    <span><i class="far fa-heart"></i> <%= @post.likes_counter  %></span>
   </div>
   <div class="comments">
     <%= render @post.comments %>
@@ -11,7 +12,7 @@
   <% end %>
 
   <%= link_to add_like_user_post_path, method: :post, class: 'like' do %>
-    <i class="far fa-heart"></i>
+    Like <i class="far fa-heart"></i>
   <% end %>
 
   <%= form_with url: user_post_comments_url(@post.author, @post) do |f| %>
