@@ -1,4 +1,7 @@
 <div class="comment">
-  <span><%= comment.author.name %>: <%= comment.text %></span>
-  <%= link_to 'Delete', comment_url(comment), method: :delete, class: 'button' %>
+  <span><strong><%= comment.author.name %></strong>: <%= comment.text %></span>
+  <% puts "\n" * 100, can?(:destroy, comment) %>
+  <% if can? :destroy, comment %>
+    <%= link_to 'Delete', comment_url(comment), method: :delete, class: 'button' %>
+  <% end %>
 </div>
