@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:id])
     post = comment.post
     comment.destroy!
+    flash[:success] = 'Removed comment!'
     redirect_back fallback_location: [post.author, post]
   end
 
