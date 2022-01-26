@@ -156,6 +156,14 @@ input[type='submit'] {
   }
 }
 
+.alert,
+.notice {
+  background-color: rgba(255, 255, 0, 0.233);
+  border: 1px solid rgb(199, 199, 10);
+  padding: 0.4em;
+  border-radius: 0.4em;
+}
+
 .success {
   background-color: rgba(153, 205, 50, 0.26);
   border: 1px solid yellowgreen;
