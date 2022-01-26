@@ -128,6 +128,9 @@ input[type='submit'] {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .comments {
@@ -186,10 +189,10 @@ input[type='submit'] {
 }
 
 .like {
-  background-color: rgba(220, 20, 60, 0.274);
   padding: 0.4em;
   border-radius: 0.4em;
   align-self: flex-start;
+  transition: background-color 80ms;
 
   &:hover {
     background-color: rgba(233, 53, 89, 0.486);
