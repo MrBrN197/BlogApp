@@ -4,10 +4,13 @@ class Ability
   def initialize(user)
     can :read, Post
     can :read, Comment
+    can :read, User
+    can :read, Like
     return unless user.present?
 
-    can :destroy, Post, author_id: user.id
-    can :destroy, Comment, author_id: user.id
+    can :manage, Post, author_id: user.id
+    can :manage, Comment, author_id: user.id
+    can :manage, Like, author_id: user.id
     return unless user.admin?
 
     can :manage, :all
