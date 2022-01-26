@@ -1,10 +1,16 @@
 <section>
   <div class="post">
-    <h2><%= @post.title %></h2>
+    <div>
+      <h2><%= @post.title %></h2> by <span><%= @post.author.name %></span>
+    </div>
     <p><%= @post.text %></p>
-    <%= link_to add_like_user_post_path, method: :post, class: 'like' do %>
-      <span><i class="far fa-heart"></i> <%= @post.likes_counter  %></span>
-    <% end %>
+    <div class="stats">
+      <%= link_to add_like_user_post_path, method: :post, class: 'like' do %>
+        <span><i class="far fa-heart"></i> <%= @post.likes.size  %></span>
+      <% end %>
+      |
+      <span>Comments</i> <%= @post.comments.size  %></span>
+    </div>
   </div>
   <div class="comments">
     <%= render @post.comments %>
