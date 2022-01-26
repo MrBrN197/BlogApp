@@ -1,6 +1,8 @@
 <section>
   <%= render @user %>
-  <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
+  <% if @user.id == current_user.id %>
+    <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
+  <% end %>
   <div class="posts">
     <%= render @posts %>
   </div>
