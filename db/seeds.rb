@@ -17,8 +17,14 @@ wendy = User.new(name: 'Wendy', photo: image2 , bio: lorem40, posts_counter: 0, 
 wendy.skip_confirmation!
 wendy.save!
 john = User.create!(name: 'John', photo: image3, bio: lorem40, posts_counter: 0, email: 'john@gmail.com', password: 'johnjohn')
+john.skip_confirmation!
+john.save!
 chris = User.create!(name: 'Chris', photo: image4 , bio: lorem40, posts_counter: 0, email: 'chris@gmail.com', password: 'chrischris')
+chris.skip_confirmation!
+chris.save!
 michael = User.create!(name: 'Michael', photo: image1 , bio: lorem40, posts_counter: 0, email: 'michael@gmail.com', password: 'micahelmichael')
+michael.skip_confirmation!
+michael.save!
 
 post1 = michael.posts.create!(title: 'Cats and Dogs', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0)
 michael.posts.create!(title: 'Never ending fun', text: 'this is second post but I don\'t think I should create another post again', comments_counter: 0, likes_counter: 0)
