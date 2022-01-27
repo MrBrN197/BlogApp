@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def show
     user = User.find(params[:user_id])
     @post = user.posts.includes(:comments).find(params[:id])
+    render json: @post, status: :ok
   end
 
   def new
