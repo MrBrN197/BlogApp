@@ -48,7 +48,8 @@ RSpec.describe Post, type: :model do
     end
 
     it 'updates the post_counter correctly' do
-      user = User.new(name: 'Michael', email: 'michael@test.com', password: 'michael123', photo: '', bio: '', posts_counter: 0)
+      user = User.new(name: 'Michael', email: 'michael@test.com', password: 'michael123', photo: '', bio: '',
+                      posts_counter: 0)
       user.skip_confirmation!
       expect(user).to be_valid
       Post.create!(title: 'Post 1ere', text: 'this is my post', comments_counter: 0, likes_counter: 0, author: user)
@@ -60,9 +61,11 @@ RSpec.describe Post, type: :model do
 
     it 'gets the 5 most recent comments for a post' do
       post = Post.new(title: 'My Post', text: 'this is a post', comments_counter: 0, likes_counter: 0)
-      post.build_author(name: 'Michelle', email: 'michelle@test.com', password: 'michelle123', photo: '', bio: '', posts_counter: 0, confirmed_at: Time.now)
+      post.build_author(name: 'Michelle', email: 'michelle@test.com', password: 'michelle123', photo: '', bio: '',
+                        posts_counter: 0, confirmed_at: Time.now)
       post.save!
-      comment_creator = User.new(name: 'Cynthia', email: 'cynthia@test.com', password: 'cynthia123', photo: '', bio: '', posts_counter: 0)
+      comment_creator = User.new(name: 'Cynthia', email: 'cynthia@test.com', password: 'cynthia123', photo: '',
+                                 bio: '', posts_counter: 0)
       comment_creator.skip_confirmation!
       expect(comment_creator).to be_valid
       post.comments.create!(text: 'this is a comment1', author: comment_creator)

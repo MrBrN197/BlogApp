@@ -4,17 +4,22 @@ describe 'On Post Index Page', type: :feature do
   before(:each) do
     visit user_session_path
     @mike = User.create!(
-      name: 'mike', bio: 'this is my bio', photo: 'test_image1', email: 'mike@gmail.com', password: 'mikemike', confirmed_at: Time.now)
+      name: 'mike', bio: 'this is my bio', photo: 'test_image1',
+      email: 'mike@gmail.com', password: 'mikemike', confirmed_at: Time.now
+    )
     fill_in 'Email', with: 'mike@gmail.com'
     fill_in 'Password', with: 'mikemike'
     click_button 'Log in'
 
     @post1 = @mike.posts.create!(
-      title: 'Cats and Dogs', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0)
+      title: 'Cats and Dogs', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0
+    )
     @mike.posts.create!(
-      title: 'Post2', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0)
+      title: 'Post2', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0
+    )
     @mike.posts.create!(
-      title: 'Three', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0)
+      title: 'Three', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0
+    )
 
     # Comments
     lucy = User.create!(
