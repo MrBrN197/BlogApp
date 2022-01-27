@@ -112,9 +112,6 @@ input[type='submit'] {
 }
 
 .posts {
-  @extend %box;
-
-  background-color: $darker;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;

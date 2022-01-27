@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Alex', photo: '', bio: '') }
+  subject do
+    User.new(name: 'Alex', photo: '', bio: '', email: 'alex@test.com', password: 'alexalex', confirmed_at: Time.now)
+  end
   before { subject.save! }
 
   describe 'Test validations are correct' do
@@ -22,12 +24,19 @@ RSpec.describe User, type: :model do
   it 'test that the user is created properly' do
     name = 'Alfred'
     photo = 'https://images.unsplash.com/photo-1642024728966-7492bae9bb60?w=300'
-    user = User.new(name: name, photo: photo, bio: 'Hi', posts_counter: 0)
+    email = 'alfred@test.com'
+    password = 'alfred123'
+    user = User.new(name: name, email: email, password: password, photo: photo, bio: 'Hi', posts_counter: 0)
+    user.skip_confirmation!
     expect(user).to be_valid
   end
 
   it 'tests that the first_three method works correctly' do
-    user = User.create!(name: 'Sarah', photo: '', bio: '', posts_counter: 0)
+    user = User.create!(
+      name: 'Sarah', email: 'sarah@test.com',
+      password: 'sarah123', photo: '',
+      bio: '', posts_counter: 0, confirmed_at: Time.now
+    )
     user.posts.create(title: 'Post 1', text: 'This is my first post')
     user.posts.create(title: 'Post 2', text: 'This is my second post')
     p3 = user.posts.create(title: 'Post 3', text: 'This is my third post')

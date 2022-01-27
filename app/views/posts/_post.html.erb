@@ -1,16 +1,22 @@
 <div class="post-box">
-  <%= link_to user_post_path(@user, post) do%>
+  <%= link_to user_post_path(post.author, post) do %>
     <div class="post">
       <p><strong>Post #<%= post_counter + 1 %></strong></p>
       <h3><%= post.title %></h3>
       <p> <%= post.text %> </p>
-      <span><i class="far fa-heart"></i> <%= post.likes.size  %></span>
+      <div class="stats">
+        <span><i class="far fa-heart"></i> <%= post.likes.size  %></span>
+        |
+        <span>Comments</i> <%= post.comments.size  %></span>
+      </div>
     </div>
   <% end %>
-  <div class="comments">
-    <%= render post.five_recent_comments %>
-  </div>
+  <% if local_assigns[:comments] %>
+    <div class="comments">
+      <%= render post.five_recent_comments %>
+    </div>
+  <% end %>
   <% if can? :destroy, post %>
-    <%= button_to 'Delete Post', user_post_path(@user, post), method: :delete, class: 'delete' %>
+    <%= button_to 'Delete Post', user_post_path(post.author, post), method: :delete, class: 'delete' %>
   <% end %>
 </div>

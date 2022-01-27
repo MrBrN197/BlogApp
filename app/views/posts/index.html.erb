@@ -4,9 +4,7 @@
     <%= link_to 'Create New Post', new_user_post_url(@user), class: 'button' %>
   <% end %>
   <div class="posts">
-    <%= render @posts %>
+    <%= render partial: @posts, locals: {comments: true} %>
   </div>
-  <% if !@user.posts.empty? %>
-    <%= link_to 'See All My Posts', @user, class: 'button' %>
-  <% end %>
+  <button>More Posts</button>
 </section>

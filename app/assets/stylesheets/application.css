@@ -28,3 +28,7 @@ input,
 textarea {
   font: inherit;
 }
+
+footer {
+  height: 5rem;
+}

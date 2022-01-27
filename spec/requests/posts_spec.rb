@@ -1,8 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
+  before(:each) do
+    @user = User.new(name: 'matt', email: 'matt@test.com', password: 'matt123')
+    @user.skip_confirmation!
+    @user.save!
+  end
+
   describe 'GET #index' do
-    before(:each) { get user_posts_path user_id: 4 }
+    before(:each) { get user_posts_path(@user) }
     it 'should return correct response' do
       expect(response).to have_http_status(200)
     end
