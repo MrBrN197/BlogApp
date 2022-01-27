@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  # before_action :authenticate_user!
+  # load_and_authorize_resource
 
   def index
     @user = User.includes(:posts).find(params[:user_id])
     @posts = @user.posts.includes(:comments)
+    render json: @posts, status: :ok
   end
 
   def show
