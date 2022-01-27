@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Index Show Page', type: feature do
+describe 'In Post Show Page', type: :feature do
   before(:each) do
     visit user_session_path
     @mike = User.create!(
@@ -22,34 +22,34 @@ describe 'Index Show Page', type: feature do
     visit user_post_path(@mike, post)
   end
 
-  describe 'index page' do
-    it 'I can see a post\'s title.' do
+  describe 'I can see' do
+    it 'a post\'s title.' do
       expect(page).to have_content 'Cats and Dogs'
     end
 
-    it 'I can see who wrote the post.' do
+    it 'who wrote the post.' do
       expect(page).to have_content 'mike'
     end
 
-    it 'I can see how many comments it has.' do
+    it 'how many comments it has.' do
       expect(page).to have_content 'Comments 3'
     end
 
-    it 'I can see how many likes it has.' do
+    it 'how many likes it has.' do
       first_post = page.all('.stats')[0]
       expect(first_post).to have_css('.far.fa-heart')
       expect(first_post).to have_content '0'
     end
 
-    it 'I can see the post body.' do
+    it 'the post body.' do
       expect(page).to have_content 'this is first post about cats and dogs!'
     end
 
-    it 'I can see the username of each commentor.' do
+    it 'the username of each commentor.' do
       expect(page).to have_content 'lucy'
     end
 
-    it 'I can see the comment each commentor left.' do
+    it 'the comment each commentor left.' do
       expect(page).to have_content 'really nice post Michael'
       expect(page).to have_content 'Great'
       expect(page).to have_content 'fantastic'

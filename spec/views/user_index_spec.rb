@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User Index Page', type: feature do
+describe 'User Index Page', type: :feature do
   before(:each) do
     visit user_session_path
     @mike = User.create!(
