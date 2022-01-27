@@ -45,13 +45,13 @@ describe 'User Show Page', type: :feature do
       expect(page).to have_current_path(user_post_path(@mike, @post1))
     end
 
-    # it 'I can see a button that lets me view all of a user\'s posts.' do
-    #   expect(page).to have_link 'See All My Posts'
-    # end
+    it 'I can see a button that lets me view all of a user\'s posts.' do
+      expect(page).to have_link 'See All My Posts'
+    end
 
-    # it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
-    #   click_link 'See All My Posts'
-    #   expect(page).to have_current_path(user_path(@mike))
-    # end
+    it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
+      click_link 'See All My Posts'
+      expect(page).to have_current_path(user_posts_path(@mike))
+    end
   end
 end
