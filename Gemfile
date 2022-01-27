@@ -36,7 +36,6 @@ gem 'devise'
 # CanCanCan Authorization solution
 gem 'cancancan'
 
-gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
 
