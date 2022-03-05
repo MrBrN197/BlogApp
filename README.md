@@ -40,7 +40,7 @@ to test simply run `rspec`
 
 - GitHub: [@MrBrN197](https://github.com/MrBrN197)
 - Twitter: [@MrBrN197](https://twitter.com/MrBrN197)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/brian-orora-2b7883a7/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/orora-brian/)
 
 ## 🤝 Contributing
 
